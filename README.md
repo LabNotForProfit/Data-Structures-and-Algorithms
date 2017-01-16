@@ -1,2 +1,2 @@
 # Data-Structures-and-Algorithms
-Practice files for reviewing data structures/algorithms
+This repository will hold data structure/algorithm review exercises.
