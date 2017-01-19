@@ -26,6 +26,15 @@ console.log(num);
 
 // Comparison Operators
 
+/* the identity operator (===) behaves identically to the equality operator (==)
+except no type conversion is done, and the types must be the same to be considered
+equal.
+
+The equality operator (==) will compare for equality after doing any necessary
+type conversions. For example 1 == '1' would yield true, for example. The
+identity operator will not do type conversion at all, 1 === '1' would yield
+false.  Try to use identity operators instead of equality operators. */
+
 console.log('num == 1 : ' + (num == 1));
 console.log('num === 1 : ' + (num === 1));
 console.log('num != 1 : ' + (num != 1));
