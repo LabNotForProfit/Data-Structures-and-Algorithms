@@ -40,7 +40,7 @@ if(month === 1){
   console.log("January");
 } else if (month === 2){
   console.log("February");
-} else if (mont === 3){
+} else if (month === 3){
   console.log("March");
 } else {
   console.log("The month is not January, February, or March.")
@@ -62,3 +62,38 @@ switch(month) {
   default:
     console.log("The month is not January, February, or March.")
 }
+
+/* Here you are using the case and break keywords.
+
+The case clause determines whether the value of switch is equal to the value of the case clause
+
+The break statement stops the switch statement from executing the rest of the statement
+
+The default statement is executed if none of the case statements are true
+
+*/
+
+// Loops
+
+// For Loops
+
+for (var i = 0; i < 10; i++){
+  console.log(i);
+}
+
+// While Loops
+
+var i = 0;
+while (i < 10)
+{
+  console.log(i);
+  i++;
+}
+
+// Do while Loops
+
+var i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 10);
