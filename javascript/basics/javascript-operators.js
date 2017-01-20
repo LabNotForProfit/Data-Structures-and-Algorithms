@@ -80,3 +80,41 @@ console.log('typeof [1,2,3]:', typeof [1,2,3]);
 var myObj = {name: 'John', age:21};
 delete myObj.age;
 console.log(myObj);
+
+// Truthy vs Falsy
+
+/*Undefined and null both return false
+-For booleans, true returns true false returns false
+-for numbers, -0,+0 or NaN return false, otherwise result is true
+-for strings, result is false if the string is empty, otherwise true
+-objects result in true
+
+*/
+
+function testTruthy(val) {
+  return val ? console.log('truthy') : console.log('falsy');
+}
+
+testTruthy(true);
+testTruthy(false);
+
+// But when create a Boolean object, objects are always true
+testTruthy(new Boolean(false));
+
+var test = new Boolean(false);
+console.log(typeof test);
+
+testTruthy('');
+testTruthy('Chris');
+testTruthy(new String(''));
+testTruthy(1);
+testTruthy(-1);
+testTruthy(NaN);
+testTruthy(new Number(NaN));
+testTruthy({});
+
+var obj = {name:'John'};
+testTruthy(obj);
+testTruthy(obj.name);
+testTruthy(obj.age);
+//age does not exist
