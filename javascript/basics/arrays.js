@@ -77,9 +77,11 @@ for (var i = numbers.length; i >= 0; i--){
 numbers[0] = -1;
 console.log(numbers);
 
-/* javascript array class als ohas a method called unshift, which inserts
+/* javascript array class also has a method called unshift, which inserts
 the values passed in the method's arguments at the start of an array
 */
+
+// the push and pop methods allow an array to emulate a basic stack data structure
 
 numbers.unshift(-2);
 console.log(numbers);
@@ -105,7 +107,34 @@ console.log(numbers);
 numbers.shift();
 console.log(numbers);
 
+// The shift and unshift methods allow an array to emulate a basic queue data structure
 
-// this will remove the
+/* We can use the splice method to remove an element from an array by specifying the
+position/index we would like to delete from and how many elements we would like to
+remove
+*/
 
-// the push and pop methods allow an array to emulate a basic stack data structure
+console.log(numbers);
+numbers.splice(5,3);
+
+// The above code would remove three elements starting at index 5 of the numbers array
+
+console.log(numbers);
+
+/* Now if we wanted to insert numbers 2-4 back into the array starting from
+position 5 we can also use the splice method for this:
+*/
+
+numbers.splice(5, 0, 2, 3, 4, 5);
+console.log(numbers);
+
+/* The first argument of the method is the index we want to remove or insert
+elements from. The second argument is the number of elements we want to
+remove (in this case none), and the third argument (and onwards) are the
+values we would like to insert into the array (elements 2,3, 4).
+*/
+
+// Now lets reverse what we just did
+
+numbers.splice(5,3);
+console.log(numbers);
