@@ -65,3 +65,47 @@ returns as true
 var evenNumbers = numbers.filter(isEven);
 console.log(evenNumbers);
 console.log(numbers);
+
+// Searching and sorting
+
+// lets take our numbers array and put the elements out of order
+
+numbers.reverse();
+console.log(numbers);
+
+numbers.sort();
+console.log(numbers);
+
+/* so that didn't work...the sort method sorts lexicographically and assumes
+all elements are strings
+
+we can also write our own comparison function and plug it into the sort method
+*/
+
+numbers.sort(function(a, b){
+  return a - b;
+});
+console.log(numbers);
+
+/* this comparison function will return a negative number if b is greater than
+a, a positive number if a is greater than b, and zero if they are equal...if
+a negative value is returned it implies that a is smaller than b, which is
+further used by the sort function to arrange the elements
+*/
+
+// The comparison function could also look like this:
+
+function compare(a, b){
+  if(a < b){
+    return -1;
+  }
+  if(a > b){
+    return 1;
+  }
+  return 0;
+}
+
+numbers.reverse();
+console.log(numbers);
+numbers.sort(compare);
+console.log(numbers);
