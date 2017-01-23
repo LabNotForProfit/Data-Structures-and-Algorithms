@@ -47,9 +47,8 @@ numbers.forEach(function(x){
   console.log((x % 2 === 0));
 });
 
-/* the forEach method is nondestructive, but javascript has two other iterator
-methods that return a new array with a result...the first one being the map
-method
+/* javascript has two other iterator methods that return a new array with a
+ result...the first one being the map method
 */
 
 var myMap = numbers.map(isEven);
@@ -65,3 +64,4 @@ returns as true
 
 var evenNumbers = numbers.filter(isEven);
 console.log(evenNumbers);
+console.log(numbers);
