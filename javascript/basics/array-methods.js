@@ -131,3 +131,22 @@ function comparePerson(a,b){
 }
 
 console.log(friends.sort(comparePerson));
+
+// sorting strings
+
+var names = ['Ana', 'ana', 'john', 'John'];
+console.log(names.sort());
+
+// write a comparison function that ignores the cases
+
+names.sort(function(a,b){
+  if(a.toLowerCase() < b.toLowerCase()){
+    return -1;
+  }
+  if(a.toLowerCase() > b.toLowerCase()){
+    return 1;
+  }
+  return 0;
+});
+
+console.log(names);
