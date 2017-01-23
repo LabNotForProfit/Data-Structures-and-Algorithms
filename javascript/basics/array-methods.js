@@ -106,6 +106,28 @@ function compare(a, b){
 }
 
 numbers.reverse();
-console.log(numbers);
 numbers.sort(compare);
 console.log(numbers);
+
+// Custom sorting
+
+/* we can sort an array with any type of objecvt in it, and we can also
+create a comparison function to compare the elements as we need to */
+
+var friends = [
+  {name: 'John', age: 30},
+  {name: 'Ana', age: 20},
+  {name: 'Chris', age: 25}
+];
+
+function comparePerson(a,b){
+  if (a.age < b.age){
+    return -1;
+  }
+  if (a.age > b.age){
+    return 1;
+  }
+  return 0;
+}
+
+console.log(friends.sort(comparePerson));
