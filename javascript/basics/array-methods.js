@@ -150,3 +150,25 @@ names.sort(function(a,b){
 });
 
 console.log(names);
+
+// Searching
+
+/* Two options for searching: the indexOf method, which returns the index of
+the first element that matches the argument passed, and lastIndex which returns
+the index of the last element found that matches the argument passed
+*/
+
+console.log(numbers);
+console.log(numbers.indexOf(10));
+console.log(numbers.indexOf(100));
+
+// Outputting the array into a string
+
+console.log(numbers.toString());
+
+/* If you would like to separate the elements with a different separator you
+can use the join method
+*/
+
+var numbersString = numbers.join('-');
+console.log(numbersString);
