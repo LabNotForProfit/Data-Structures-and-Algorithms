@@ -60,7 +60,7 @@ function Stack(){
   };
 }
 
-// using the stack class
+// using the stack class & testing your methods
 
 var stack = new Stack();
 
@@ -83,3 +83,33 @@ stack.pop();
 stack.pop();
 
 stack.print();
+
+// Decimal to Binary
+
+/* to convert a decimal number to a binary representation, we can divide
+the number by 2 until the division result is 0.
+
+*/
+
+function divideBy2(decNumber){
+  //create a stack to hold the remainders
+  var remainderStack = new Stack(),
+      rem,
+      binaryString = '';
+
+  while (decNumber > 0){
+    remainderStack.push(Math.floor(decNumber % 2));
+    decNumber = Math.floor(decNumber / 2);
+  }
+  // now you have to pop the elements into the binary string
+
+  while (!remainderStack.isEmpty()){
+    binaryString += remainderStack.pop().toString();
+  }
+
+  return binaryString;
+}
+
+console.log(divideBy2(10));
+console.log(divideBy2(30));
+console.log(divideBy2(50));
