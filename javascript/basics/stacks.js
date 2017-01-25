@@ -94,7 +94,6 @@ the number by 2 until the division result is 0.
 function divideBy2(decNumber){
   //create a stack to hold the remainders
   var remainderStack = new Stack(),
-      rem,
       binaryString = '';
 
   while (decNumber > 0){
@@ -113,3 +112,29 @@ function divideBy2(decNumber){
 console.log(divideBy2(10));
 console.log(divideBy2(30));
 console.log(divideBy2(50));
+
+/* Finally we can modify the previous algorithm to work as a converter from
+decimal to any base by passing the desired base as an argument to the function
+instead of dividing by 2
+*/
+
+function baseConverter(decNumber, base){
+  var remainderStack = new Stack(),
+      baseString = '',
+      digits = '0123456789ABCDEF';
+
+  while(decNumber > 0){
+    remainderStack.push(Math.floor(decNumber % base));
+    decNumber = Math.floor(decNumber / base);
+  }
+
+  while(!remainderStack.isEmpty()){
+    baseString += digits[remainderStack.pop()];
+  }
+
+  return baseString;
+}
+
+console.log(baseConverter(100345, 2));
+console.log(baseConverter(100345, 8));
+console.log(baseConverter(100345, 16));
