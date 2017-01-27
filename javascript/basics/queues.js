@@ -42,20 +42,20 @@ function Queue(){
 
 // Using the queue class
 
-var queue = new Queue();
-console.log(queue.isEmpty());
-
-queue.enqueue("John");
-queue.enqueue("Jack");
-queue.enqueue("Camila");
-
-queue.print();
-console.log(queue.size());
-queue.dequeue();
-queue.print();
-
-queue.enqueue("John");
-queue.print();
+// var queue = new Queue();
+// console.log(queue.isEmpty());
+//
+// queue.enqueue("John");
+// queue.enqueue("Jack");
+// queue.enqueue("Camila");
+//
+// queue.print();
+// console.log(queue.size());
+// queue.dequeue();
+// queue.print();
+//
+// queue.enqueue("John");
+// queue.print();
 
 // The priority queue
 
@@ -80,7 +80,7 @@ function PriorityQueue(){
     this.priority = priority;
   };
 
-  this.enqueue = funcction(element, priority){
+  this.enqueue = function(element, priority){
     var queueElement = new QueueElement(element, priority);
 
     if (this.isEmpty()){
@@ -120,7 +120,9 @@ function PriorityQueue(){
   };
 
   this.print = function(){
-    console.log(items.toString());
+    for( var i = 0; i < items.length; i++){
+      console.log(items[i].element);
+    }
   };
 }
 
@@ -135,3 +137,12 @@ one position before (still respecting items with same priority but added first)
 
 -Once that element is found we stop looping the queue, the result being a queue
 sorted and organized by priority
+
+*/
+
+var priorityQueue = new PriorityQueue();
+
+priorityQueue.enqueue("John", 2);
+priorityQueue.enqueue("Jack", 1);
+priorityQueue.enqueue("Camila", 1);
+priorityQueue.print();
