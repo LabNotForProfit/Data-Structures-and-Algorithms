@@ -146,3 +146,34 @@ priorityQueue.enqueue("John", 2);
 priorityQueue.enqueue("Jack", 1);
 priorityQueue.enqueue("Camila", 1);
 priorityQueue.print();
+
+// The circular queue - hot potato
+
+/*
+Another modified versioon of the queue implementation is the circular queue,
+example being the hot potato game.
+*/
+console.log('HOT POTATO');
+function hotPotato(nameList){
+  var queue = new Queue();
+  var num = Math.floor(Math.random() * 6) + 1;
+
+  for(var i = 0; i < nameList.length; i++){
+    queue.enqueue(nameList[i]);
+  }
+
+  var eliminated = '';
+
+  while(queue.size() > 1){
+    for(var i = 0; i < num; i++){
+      queue.enqueue(queue.dequeue())
+    }
+    eliminated = queue.dequeue();
+    console.log(eliminated + ' was eliminated from the game');
+  }
+  return queue.dequeue();
+}
+
+var names = ["Chris", "Anna", "John", "Jack", "Penny"];
+var winner = hotPotato(names);
+console.log('The winner is: ' + winner);
