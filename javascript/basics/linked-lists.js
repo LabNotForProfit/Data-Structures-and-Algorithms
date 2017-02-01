@@ -25,7 +25,7 @@ able to access any element in an array, sounds expensive )
 
 // Creating a linked list
 
-function LinkedLIst() {
+function LinkedList() {
   var Node = function(element){
     this.element = element;
     this.next = null;
@@ -34,13 +34,37 @@ function LinkedLIst() {
   var length = 0;
   var head = null;
 
-  this.append = function(element){};
+  this.append = function(element){
+    var node = new Node(element),
+        current;
+
+    if (head === null){
+      head = node;
+    } else {
+      current = head;
+
+      while ( current.next ){
+        current = current.next;
+      }
+      current.next = node;
+    }
+    length++;
+  };
+
   this.insert = function(position, element){};
   this.removeAt = function(position){};
   this.remove = function(element){};
   this.indexOf = function(element){};
   this.isEmpty = function(){};
-  this.size = function(){};
+  this.size = function(){
+    return length;
+  };
   this.toString = function(){};
   this.print = function(){};
 }
+
+var list = new LinkedList();
+console.log(list.size());
+list.append(14);
+list.append(3);
+console.log(list.size());
