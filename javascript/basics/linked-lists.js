@@ -73,7 +73,7 @@ function LinkedList() {
       return null;
     }
   };
-  
+
   this.remove = function(element){};
   this.indexOf = function(element){};
   this.isEmpty = function(){};
@@ -88,4 +88,7 @@ var list = new LinkedList();
 console.log(list.size());
 list.append(14);
 list.append(3);
+list.removeAt(1);
+console.log(list.size());
+list.removeAt(0);
 console.log(list.size());
