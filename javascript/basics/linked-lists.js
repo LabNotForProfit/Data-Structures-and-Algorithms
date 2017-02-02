@@ -109,16 +109,17 @@ function LinkedList(){
 
   this.indexOf = function(element){
     var current = head,
-    index = -1;
+    index = 0;
 
     while (current){
-      if (current.element = element){
+      if (element === current.element){
         return index;
       }
       index++;
       current = current.next;
     }
-    return -1;
+
+    return 'element not found';
   };
 
   this.remove = function(element){
@@ -144,5 +145,7 @@ list.append(1);
 list.append(2);
 list.append(4);
 
-console.log(list.size());
-console.log(list.toString());
+console.log(list.indexOf(1));
+console.log(list.indexOf(2));
+console.log(list.indexOf(4));
+console.log(list.indexOf(5));
