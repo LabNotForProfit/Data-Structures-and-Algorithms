@@ -56,6 +56,38 @@ function DoublyLinkedList(){
     }
   };
 
+  this.removeAt(position){
+    if (position > -1 && position < length){
+      var current = head,
+      previous,
+      index = 0;
+
+      if (position === 0){
+        head = current.next;
+        if (length === 1){
+          tail = null;
+        } else {
+          head.prev = null;
+        }
+      } else if (position === length - 1){
+        current = tail;
+        tail = current.prev;
+        tail.next = null;
+      } else {
+        while (index++ < position){
+          previous = current;
+          current = current.next;
+        }
+        previous.next = current.next;
+        current.next.prev = previous;
+      }
+      length--;
+      return current.element;
+    } else {
+      return null;
+    }
+  };
+
 
 
 }
