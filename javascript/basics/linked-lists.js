@@ -139,13 +139,3 @@ function LinkedList(){
     return head;
   };
 }
-
-list = new LinkedList();
-list.append(1);
-list.append(2);
-list.append(4);
-
-console.log(list.indexOf(1));
-console.log(list.indexOf(2));
-console.log(list.indexOf(4));
-console.log(list.indexOf(5));
