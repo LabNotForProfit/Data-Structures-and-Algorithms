@@ -16,8 +16,31 @@ function Set() {
     }
     return false;
   };
+
+  this.remove = function(value){
+    if(this.has(value)) {
+      delete items[value];
+      return true;
+    }
+    return false;
+  };
+
+  this.clear = function() {
+    items = [];
+  };
+
+  this.size = function() {
+    return Object.keys(items).length;
+  };
+
+  this.values = function() {
+    return Object.keys(items);
+  };
 }
 
-newSet = new Set();
+var newSet = new Set();
 newSet.add(4);
+newSet.add(2);
+newSet.add(3)
 console.log(newSet.has(4));
+console.log(newSet.has(5));
