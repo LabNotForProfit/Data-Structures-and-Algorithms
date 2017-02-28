@@ -36,6 +36,22 @@ function Set() {
   this.values = function() {
     return Object.keys(items);
   };
+
+  this.union = function(otherSet){
+    var unionSet = new Set();
+
+    var values = this.values();
+    for (var i = 0; i < values().length; i++){
+      unionSet.add(values[i]);
+    }
+
+    values = OtherSet.values();
+    for (var i = 0; i < values.length; i++){
+      unionSet.add(values[i]);
+    }
+
+    return unionSet;
+  };
 }
 
 var newSet = new Set();
@@ -44,3 +60,10 @@ newSet.add(2);
 newSet.add(3)
 console.log(newSet.has(4));
 console.log(newSet.has(5));
+
+/* Set operations
+
+Union: given two sets, this returns a new set with the elements from both given sets
+Intersection: Given two sets, this returns a new sets with the elements that exist in both sets
+Difference: Given two sets, this returns a new set with all elements that exist in the first set and do not exist in the second set
+Subset: This confirms whether a given set is a subset of another set
