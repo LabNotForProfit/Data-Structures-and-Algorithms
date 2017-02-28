@@ -41,25 +41,45 @@ function Set() {
     var unionSet = new Set();
 
     var values = this.values();
-    for (var i = 0; i < values().length; i++){
+    for (var i = 0; i < values.length; i++){
       unionSet.add(values[i]);
     }
 
-    values = OtherSet.values();
+    var values = otherSet.values();
     for (var i = 0; i < values.length; i++){
       unionSet.add(values[i]);
     }
 
     return unionSet;
   };
+
+  this.intersection = function(otherSet){
+    var intersectionSet = new Set();
+
+    var values = this.values();
+
+    for (var i = 0; i < values.length; i++){
+      if (otherSet.has(values[i])){
+        intersectionSet.add(values[i]);
+      }
+    }
+    return intersectionSet;
+  };
 }
 
-var newSet = new Set();
+var set = new Set();
 newSet.add(4);
 newSet.add(2);
-newSet.add(3)
-console.log(newSet.has(4));
-console.log(newSet.has(5));
+newSet.add(3);
+
+var otherSet = new Set();
+otherSet.add(3);
+otherSet.add(2);
+otherSet.add(5);
+
+
+set.intersection(otherSet);
+console.log(intersectionSet);
 
 /* Set operations
 
