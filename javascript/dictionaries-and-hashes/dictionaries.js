@@ -17,7 +17,7 @@ function Dictionary(){
     return false
   };
 
-  this.has(key) = function(key){
+  this.has = function(key){
     return key in items;
   };
 
@@ -29,7 +29,7 @@ function Dictionary(){
     items = {};
   };
 
-  this.size() {
+  this.size = function() {
     return Object.keys(items).length;
   };
 
@@ -42,8 +42,12 @@ function Dictionary(){
     for (var k in items){
       if (this.has(k)){
         values.push(items[k])
-      };
+      }
     }
     return values;
-  }
+  };
+
+  this.getItems = function(){
+    return items;
+  };
 }
